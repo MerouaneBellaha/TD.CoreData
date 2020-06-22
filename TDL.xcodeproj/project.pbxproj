@@ -11,9 +11,12 @@
 		CBA017B224A0C89B0040E6F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA017B124A0C89B0040E6F4 /* SceneDelegate.swift */; };
 		CBA017B424A0C89B0040E6F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA017B324A0C89B0040E6F4 /* ViewController.swift */; };
 		CBA017B724A0C89B0040E6F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBA017B524A0C89B0040E6F4 /* Main.storyboard */; };
-		CBA017BA24A0C89B0040E6F4 /* TDL.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CBA017B824A0C89B0040E6F4 /* TDL.xcdatamodeld */; };
+		CBA017BA24A0C89B0040E6F4 /* TaskModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CBA017B824A0C89B0040E6F4 /* TaskModel.xcdatamodeld */; };
 		CBA017BC24A0C89C0040E6F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBA017BB24A0C89C0040E6F4 /* Assets.xcassets */; };
 		CBA017BF24A0C89C0040E6F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBA017BD24A0C89C0040E6F4 /* LaunchScreen.storyboard */; };
+		CBA017CB24A0D2550040E6F4 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA017CA24A0D2550040E6F4 /* CoreDataManager.swift */; };
+		CBA017CE24A146B70040E6F4 /* Array+sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA017CD24A146B70040E6F4 /* Array+sort.swift */; };
+		CBA017D024A1482A0040E6F4 /* UIViewController + setAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA017CF24A1482A0040E6F4 /* UIViewController + setAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		CBA017BB24A0C89C0040E6F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBA017BE24A0C89C0040E6F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CBA017C024A0C89C0040E6F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBA017CA24A0D2550040E6F4 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		CBA017CD24A146B70040E6F4 /* Array+sort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+sort.swift"; sourceTree = "<group>"; };
+		CBA017CF24A1482A0040E6F4 /* UIViewController + setAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + setAlert.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +64,51 @@
 		CBA017AE24A0C89B0040E6F4 /* TDL */ = {
 			isa = PBXGroup;
 			children = (
+				CBA017CC24A146AA0040E6F4 /* Extensions */,
+				CBA017C824A0D0A00040E6F4 /* VIew */,
+				CBA017C724A0D0990040E6F4 /* Model */,
+				CBA017C624A0D0950040E6F4 /* Controller */,
 				CBA017AF24A0C89B0040E6F4 /* AppDelegate.swift */,
 				CBA017B124A0C89B0040E6F4 /* SceneDelegate.swift */,
-				CBA017B324A0C89B0040E6F4 /* ViewController.swift */,
-				CBA017B524A0C89B0040E6F4 /* Main.storyboard */,
 				CBA017BB24A0C89C0040E6F4 /* Assets.xcassets */,
 				CBA017BD24A0C89C0040E6F4 /* LaunchScreen.storyboard */,
 				CBA017C024A0C89C0040E6F4 /* Info.plist */,
-				CBA017B824A0C89B0040E6F4 /* TDL.xcdatamodeld */,
 			);
 			path = TDL;
+			sourceTree = "<group>";
+		};
+		CBA017C624A0D0950040E6F4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CBA017B324A0C89B0040E6F4 /* ViewController.swift */,
+				CBA017CF24A1482A0040E6F4 /* UIViewController + setAlert.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CBA017C724A0D0990040E6F4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CBA017B824A0C89B0040E6F4 /* TaskModel.xcdatamodeld */,
+				CBA017CA24A0D2550040E6F4 /* CoreDataManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CBA017C824A0D0A00040E6F4 /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				CBA017B524A0C89B0040E6F4 /* Main.storyboard */,
+			);
+			path = VIew;
+			sourceTree = "<group>";
+		};
+		CBA017CC24A146AA0040E6F4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CBA017CD24A146B70040E6F4 /* Array+sort.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,9 +182,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBA017BA24A0C89B0040E6F4 /* TDL.xcdatamodeld in Sources */,
+				CBA017BA24A0C89B0040E6F4 /* TaskModel.xcdatamodeld in Sources */,
+				CBA017CE24A146B70040E6F4 /* Array+sort.swift in Sources */,
+				CBA017D024A1482A0040E6F4 /* UIViewController + setAlert.swift in Sources */,
 				CBA017B424A0C89B0040E6F4 /* ViewController.swift in Sources */,
 				CBA017B024A0C89B0040E6F4 /* AppDelegate.swift in Sources */,
+				CBA017CB24A0D2550040E6F4 /* CoreDataManager.swift in Sources */,
 				CBA017B224A0C89B0040E6F4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,6 +335,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K8M973GY56;
 				INFOPLIST_FILE = TDL/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -309,6 +354,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K8M973GY56;
 				INFOPLIST_FILE = TDL/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -344,13 +390,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		CBA017B824A0C89B0040E6F4 /* TDL.xcdatamodeld */ = {
+		CBA017B824A0C89B0040E6F4 /* TaskModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				CBA017B924A0C89B0040E6F4 /* TDL.xcdatamodel */,
 			);
 			currentVersion = CBA017B924A0C89B0040E6F4 /* TDL.xcdatamodel */;
-			path = TDL.xcdatamodeld;
+			path = TaskModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
