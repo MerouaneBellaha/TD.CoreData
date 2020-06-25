@@ -9,43 +9,36 @@
 import CoreData
 
 final class CoreDataManager {
-    private let context: NSManagedObjectContext?
+    var context: NSManagedObjectContext
+    var coreDataStack: CoreDataStack
 
-    init(with context: NSManagedObjectContext) {
-        self.context = context
+    init(with coreDataStack: CoreDataStack) {
+        self.coreDataStack = coreDataStack
+        self.context = coreDataStack.context
     }
 
-    func saveTasks() {
-           do {
-            try context?.save()
-           } catch {
-               print(error.localizedDescription)
-           }
-       }
+    func loadItems() -> [Task] {
+        let request: NSFetchRequest<Task> = Task.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "taskName", ascending: true)]
 
-    func loadItems<T: NSManagedObject>(with predicate: NSPredicate? = nil, sortBy descriptor: [NSSortDescriptor]? = nil) -> [T] {
-        let request = T.fetchRequest() as! NSFetchRequest<T>
-
-        request.predicate = predicate
-        request.sortDescriptors = descriptor
-
-        var items: [T] = []
-        do {
-            items = try context?.fetch(request) ?? []
-        } catch {
-            print(error.localizedDescription)
+        var items: [Task] {
+            guard let items = try? context.fetch(request) else { return [] }
+            return items
         }
         return items
     }
 
-    func deleteItems<T: NSManagedObject>(from: [T]) {
-        let request = T.fetchRequest() as! NSFetchRequest<T>
-        var items: [T] = []
-        do {
-            items = try context?.fetch(request) ?? []
-            items.forEach { context?.delete($0)}
-        } catch {
-            print(error.localizedDescription)
-        }
+    func deleteItems() {
+        loadItems().forEach { context.delete($0)}
+        coreDataStack.saveContext()
+    }
+
+    func createItem(named name: String) {
+        let newItem = Task(context: context)
+        newItem.taskName = name
+        coreDataStack.saveContext()
     }
 }
+
+
+

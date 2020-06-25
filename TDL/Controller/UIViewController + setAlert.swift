@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIViewController {
-    /// set an alert with a textField and and an Add button, callback contains the the textField text to save
+    /// set an alert with a textField and an Add button, callback contains the the textField text to save
     func setAlert(callBack: @escaping ((String) -> ())) {
         let alert = UIAlertController(title: nil, message: "Add new task", preferredStyle: .alert)
         alert.addTextField { textField in
