@@ -32,9 +32,7 @@ open class CoreDataStack {
     }()
 
     public func saveContext () {
-                    print(context.hasChanges)
         if context.hasChanges {
-
             do {
                 try context.save()
             } catch {
