@@ -17,17 +17,26 @@ final class CoreDataManager {
         self.context = coreDataStack.context
     }
 
-    func loadItems() -> [Task] {
+    func loadItems(with text: String? = nil) -> [Task] {
         let request: NSFetchRequest<Task> = Task.fetchRequest()
+
+        if let text = text {
+            request.predicate = NSPredicate(format: "taskName CONTAINS[cd] %@", text)
+        }
+
         request.sortDescriptors = [NSSortDescriptor(key: "taskName", ascending: true)]
 
         guard let items = try? context.fetch(request) else { return [] }
-
         return items
     }
 
     func deleteItems() {
         loadItems().forEach { context.delete($0)}
+        coreDataStack.saveContext()
+    }
+
+    func deleteItem(item: Task) {
+        context.delete(item)
         coreDataStack.saveContext()
     }
 

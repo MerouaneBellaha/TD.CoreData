@@ -19,8 +19,13 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VI6-3e-4wQ">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="Jun-FE-IZX">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="Fsb-tQ-9GI">
-                                    <rect key="frame" x="0.0" y="99.5" width="414" height="128"/>
+                                    <rect key="frame" x="0.0" y="689.5" width="414" height="128"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No task atm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Y1-Wg-LuM">
@@ -38,7 +43,7 @@
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskCell" textLabel="1jF-Ya-nJt" style="IBUITableViewCellStyleDefault" id="exR-Fy-i7d">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="72" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="exR-Fy-i7d" id="gRQ-Ub-D0D">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -80,6 +85,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="noTaskLabel" destination="1Y1-Wg-LuM" id="6z5-3R-TKS"/>
+                        <outlet property="searchBar" destination="Jun-FE-IZX" id="aGo-uh-vCE"/>
                         <outlet property="tableView" destination="VI6-3e-4wQ" id="beo-4e-L9p"/>
                     </connections>
                 </viewController>
