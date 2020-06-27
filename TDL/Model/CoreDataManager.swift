@@ -21,10 +21,8 @@ final class CoreDataManager {
         let request: NSFetchRequest<Task> = Task.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: "taskName", ascending: true)]
 
-        var items: [Task] {
-            guard let items = try? context.fetch(request) else { return [] }
-            return items
-        }
+        guard let items = try? context.fetch(request) else { return [] }
+
         return items
     }
 

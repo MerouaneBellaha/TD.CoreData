@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CB3B22E324A4B6F900026F0E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3B22E224A4B6F900026F0E /* CoreDataStack.swift */; };
+		CB834BF024A5335E009F3A4B /* CoreDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB834BEF24A5335E009F3A4B /* CoreDataManagerTests.swift */; };
+		CB834BF824A533EA009F3A4B /* FakeCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB834BF724A533EA009F3A4B /* FakeCoreDataStack.swift */; };
 		CBA017B024A0C89B0040E6F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA017AF24A0C89B0040E6F4 /* AppDelegate.swift */; };
 		CBA017B424A0C89B0040E6F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA017B324A0C89B0040E6F4 /* ViewController.swift */; };
 		CBA017B724A0C89B0040E6F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBA017B524A0C89B0040E6F4 /* Main.storyboard */; };
@@ -19,8 +21,22 @@
 		CBA017D024A1482A0040E6F4 /* UIViewController + setAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA017CF24A1482A0040E6F4 /* UIViewController + setAlert.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		CB834BF224A5335E009F3A4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CBA017A424A0C89B0040E6F4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CBA017AB24A0C89B0040E6F4;
+			remoteInfo = TDL;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		CB3B22E224A4B6F900026F0E /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		CB834BED24A5335E009F3A4B /* CoreDataManager.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataManager.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB834BEF24A5335E009F3A4B /* CoreDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerTests.swift; sourceTree = "<group>"; };
+		CB834BF124A5335E009F3A4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB834BF724A533EA009F3A4B /* FakeCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeCoreDataStack.swift; sourceTree = "<group>"; };
 		CBA017AC24A0C89B0040E6F4 /* TDL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TDL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBA017AF24A0C89B0040E6F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBA017B324A0C89B0040E6F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +51,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CB834BEA24A5335E009F3A4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CBA017A924A0C89B0040E6F4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -45,10 +68,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB834BEE24A5335E009F3A4B /* CoreDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				CB834BEF24A5335E009F3A4B /* CoreDataManagerTests.swift */,
+				CB834BF724A533EA009F3A4B /* FakeCoreDataStack.swift */,
+				CB834BF124A5335E009F3A4B /* Info.plist */,
+			);
+			path = CoreDataManager;
+			sourceTree = "<group>";
+		};
 		CBA017A324A0C89B0040E6F4 = {
 			isa = PBXGroup;
 			children = (
 				CBA017AE24A0C89B0040E6F4 /* TDL */,
+				CB834BEE24A5335E009F3A4B /* CoreDataManager */,
 				CBA017AD24A0C89B0040E6F4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				CBA017AC24A0C89B0040E6F4 /* TDL.app */,
+				CB834BED24A5335E009F3A4B /* CoreDataManager.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,6 +149,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		CB834BEC24A5335E009F3A4B /* CoreDataManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB834BF624A5335E009F3A4B /* Build configuration list for PBXNativeTarget "CoreDataManager" */;
+			buildPhases = (
+				CB834BE924A5335E009F3A4B /* Sources */,
+				CB834BEA24A5335E009F3A4B /* Frameworks */,
+				CB834BEB24A5335E009F3A4B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB834BF324A5335E009F3A4B /* PBXTargetDependency */,
+			);
+			name = CoreDataManager;
+			productName = CoreDataManager;
+			productReference = CB834BED24A5335E009F3A4B /* CoreDataManager.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		CBA017AB24A0C89B0040E6F4 /* TDL */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CBA017C324A0C89C0040E6F4 /* Build configuration list for PBXNativeTarget "TDL" */;
@@ -141,6 +194,10 @@
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Merouane Bellaha";
 				TargetAttributes = {
+					CB834BEC24A5335E009F3A4B = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = CBA017AB24A0C89B0040E6F4;
+					};
 					CBA017AB24A0C89B0040E6F4 = {
 						CreatedOnToolsVersion = 11.3;
 					};
@@ -160,11 +217,19 @@
 			projectRoot = "";
 			targets = (
 				CBA017AB24A0C89B0040E6F4 /* TDL */,
+				CB834BEC24A5335E009F3A4B /* CoreDataManager */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CB834BEB24A5335E009F3A4B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CBA017AA24A0C89B0040E6F4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -178,6 +243,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CB834BE924A5335E009F3A4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB834BF824A533EA009F3A4B /* FakeCoreDataStack.swift in Sources */,
+				CB834BF024A5335E009F3A4B /* CoreDataManagerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CBA017A824A0C89B0040E6F4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -193,6 +267,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CB834BF324A5335E009F3A4B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CBA017AB24A0C89B0040E6F4 /* TDL */;
+			targetProxy = CB834BF224A5335E009F3A4B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CBA017B524A0C89B0040E6F4 /* Main.storyboard */ = {
@@ -214,6 +296,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		CB834BF424A5335E009F3A4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K8M973GY56;
+				INFOPLIST_FILE = CoreDataManager/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.merouanebellaha.CoreDataManager;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TDL.app/TDL";
+			};
+			name = Debug;
+		};
+		CB834BF524A5335E009F3A4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K8M973GY56;
+				INFOPLIST_FILE = CoreDataManager/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.merouanebellaha.CoreDataManager;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TDL.app/TDL";
+			};
+			name = Release;
+		};
 		CBA017C124A0C89C0040E6F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -369,6 +491,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CB834BF624A5335E009F3A4B /* Build configuration list for PBXNativeTarget "CoreDataManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB834BF424A5335E009F3A4B /* Debug */,
+				CB834BF524A5335E009F3A4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CBA017A724A0C89B0040E6F4 /* Build configuration list for PBXProject "TDL" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
