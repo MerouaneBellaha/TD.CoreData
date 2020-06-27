@@ -17,7 +17,7 @@ final class CoreDataManager {
         self.context = coreDataStack.context
     }
 
-    func loadItems(with text: String? = nil) -> [Task] {
+    func loadItems(containing text: String? = nil) -> [Task] {
         let request: NSFetchRequest<Task> = Task.fetchRequest()
 
         if let text = text {

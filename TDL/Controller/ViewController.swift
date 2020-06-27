@@ -16,10 +16,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     
     var coreDataManager: CoreDataManager?
-    var searchText: String = "" {
-        didSet {
-            tableView.reloadData()
-        }
+    var searchText: String = "" { didSet { tableView.reloadData() }}
+    var loadedItems: [Task] {
+        (searchBar.text?.isEmpty == true ? coreDataManager?.loadItems() : coreDataManager?.loadItems(containing: searchText)) ?? []
     }
 
     override func viewDidLoad() {
@@ -46,22 +45,13 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-        guard searchBar.text?.isEmpty == true else {
-            return coreDataManager?.loadItems(with: searchText).count ?? 0
-        }
-
         noTaskLabel.text = coreDataManager?.loadItems().isEmpty ?? true ? "no task" : .none
-        return coreDataManager?.loadItems().count ?? 0
+        return loadedItems.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath)
-        guard searchBar.text?.isEmpty == true else {
-            cell.textLabel?.text = coreDataManager?.loadItems(with: searchText)[indexPath.row].taskName
-            return cell
-        }
-        cell.textLabel?.text = coreDataManager?.loadItems()[indexPath.row].taskName
+        cell.textLabel?.text = loadedItems[indexPath.row].taskName
         return cell
     }
 }
