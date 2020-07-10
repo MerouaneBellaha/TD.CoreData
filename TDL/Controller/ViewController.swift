@@ -66,7 +66,6 @@ extension ViewController: UITableViewDelegate {
 }
 
 extension ViewController: UISearchBarDelegate {
-
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.searchText = searchText
     }
